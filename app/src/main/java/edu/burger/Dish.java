@@ -16,4 +16,17 @@ public class Dish {
     Double getPrice() {
         return price;
     }
+
+    public void display() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder display = new StringBuilder(getName())
+        .append("............")
+        .append(getPrice())
+        .append("$");
+        return display.toString();
+    }
 }
