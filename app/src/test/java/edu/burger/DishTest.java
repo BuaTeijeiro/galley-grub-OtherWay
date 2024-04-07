@@ -12,4 +12,10 @@ public class DishTest {
         assertEquals("Krabby Patty", burger.getName());
         assertTrue(burger.getPrice().equals(1.25));
     }
+
+    public void addExtraTest(){
+        Dish burger = new Dish("Krabby Patty",1.25);
+        burger.addExtra(new Extra("cheese", 0.25));
+        assertEquals(1, burger.countExtras());
+    }
 }

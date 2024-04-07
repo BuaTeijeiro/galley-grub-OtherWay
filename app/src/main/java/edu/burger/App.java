@@ -7,9 +7,18 @@ public class App {
 
     public static void main(String[] args) {
         //Creo el primer producto
+        App.print("--------------Primer Plato ------------\n");
         Dish burger = new Dish("Krabby Patty",1.25);
         burger.display();
+        App.print("--------------Añadimos extra ------------\n");
         Extra cheese = new Extra("Cheese",0.25);
         cheese.display();
+        App.print("--------------Añadimos el extra al plato ------------\n");
+        burger.addExtra(cheese);
+        burger.display();
+    }
+
+    public static void print(String string){
+        System.out.println(string);
     }
 }
