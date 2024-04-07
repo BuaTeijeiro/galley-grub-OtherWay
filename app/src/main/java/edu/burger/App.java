@@ -16,6 +16,17 @@ public class App {
         App.print("--------------Añadimos el extra al plato ------------\n");
         burger.addExtra(cheese);
         burger.display();
+        Dish fries = new Dish("Coral bits",1.0);
+        Extra medium = new Extra("Medium", 0.5);
+        Extra large = new Extra("Large", 1.0);
+        fries.addExtra(medium);
+        burger.addExtra(large);
+        App.print("--------------Hacemos un pedido------------\n");
+        Order myOrder = new Order();
+        myOrder.addDish(burger);
+        myOrder.addDish(fries);
+        myOrder.display();
+
     }
 
     public static void print(String string){
