@@ -10,5 +10,6 @@ public class App {
         Dish burger = new Dish("Krabby Patty",1.25);
         burger.display();
         Extra cheese = new Extra("Cheese",0.25);
+        cheese.display();
     }
 }
