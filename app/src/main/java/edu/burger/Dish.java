@@ -5,11 +5,13 @@ import java.util.ArrayList;
 public class Dish {
     String name;
     Double price;
+    Double totalPrice;
     ArrayList<Extra> extras = new ArrayList<>();
 
     public Dish(String name, Double price) {
         this.name = name;
         this.price = price;
+        this.totalPrice = price;
     }
 
     String getName() {
@@ -20,12 +22,17 @@ public class Dish {
         return price;
     }
 
+    Double getTotalPrice() {
+        return totalPrice;
+    }
+
     public void display() {
         System.out.println(this);
     }
 
     public void addExtra(Extra newExtra) {
         this.extras.add(newExtra);
+        this.totalPrice += newExtra.getPrice();
     }
 
     int countExtras(){
@@ -36,8 +43,16 @@ public class Dish {
     public String toString(){
         StringBuilder display = new StringBuilder(getName())
         .append("............")
+        .append(getTotalPrice())
+        .append("$\n")
+        .append("\tBasic....")
         .append(getPrice())
-        .append("$");
+        .append("$\n");
+        for (Extra extra : this.extras){
+            display.append("\t")
+            .append(extra.toString())
+            .append("\n");
+        }
         return display.toString();
     }
 
